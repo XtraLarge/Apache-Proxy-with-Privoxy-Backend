@@ -4,6 +4,7 @@ RUN apt-get update
 RUN apt-get install -y apache2 libapache2-mod-wsgi-py3
 
 ADD log.sh /
+RUN chmod +x /log.sh
 CMD /log.sh
 
 
