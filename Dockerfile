@@ -3,6 +3,10 @@ MAINTAINER Hans-Willi Werres <eMail@WilliWerres.de>
 RUN apt-get update
 RUN apt-get install -y apache2 libapache2-mod-wsgi-py3
 RUN systemctl enable apache2
+RUN a2enmod auth_digest auth_form authz_groupfile cache cache_disk cache_socache cgi cgid headers info macro mpm_prefork proxy \
+            proxy_ajp proxy_connect proxy_fcgi proxy_html proxy_http proxy_http2 proxy_scgi proxy_wstunnel request rewrite \
+            sed session session_cookie session_crypto socache_shmcb ssl substitute vhost_alias xml2enc
+RUN mkdir /etc/apache2/AddOn
 
 ADD log.sh /
 RUN chmod +x /log.sh
