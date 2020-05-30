@@ -7,6 +7,7 @@ RUN a2enmod auth_digest auth_form authz_groupfile cache cache_disk cache_socache
             proxy_ajp proxy_connect proxy_fcgi proxy_html proxy_http proxy_http2 proxy_scgi proxy_wstunnel request rewrite \
             sed session session_cookie session_crypto socache_shmcb ssl substitute vhost_alias xml2enc
 RUN mkdir /etc/apache2/AddOn
+ADD mk_macro_secrets.sh /etc/apache2
 
 ADD log.sh /
 RUN chmod +x /log.sh
