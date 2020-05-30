@@ -2,6 +2,7 @@ FROM debian:latest
 MAINTAINER Hans-Willi Werres <eMail@WilliWerres.de>
 RUN apt-get update
 RUN apt-get install -y apache2 libapache2-mod-wsgi-py3
+RUN systemctl enable apache2
 
 ADD log.sh /
 RUN chmod +x /log.sh
